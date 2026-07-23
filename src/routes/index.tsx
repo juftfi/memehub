@@ -305,7 +305,7 @@ function Index() {
                   </div>
                   <div className="md:ml-auto flex flex-col sm:flex-row gap-2">
                     <a
-                      href="https://www.ponsfamily.com/launchpad/0x93a558a07204d0dc53d01e54b21fa38c06ab9e87"
+                      href="https://www.flap.sh"
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-md bg-[color:var(--buy)] text-primary-foreground px-5 py-2.5 font-medium whitespace-nowrap text-center"
