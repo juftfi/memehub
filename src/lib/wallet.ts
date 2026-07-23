@@ -13,12 +13,12 @@ declare global {
   }
 }
 
-const STORAGE_KEY = "ponhub_wallet_address";
-// Fictional Robinhood Chain params. Real chain will replace these later.
+const STORAGE_KEY = "MemeHub_wallet_address";
+// Fictional BSC Chain params. Real chain will replace these later.
 const ROBINHUD_CHAIN = {
   chainId: "0x52424844", // "RBHD" — placeholder
-  chainName: "Robinhood Chain",
-  nativeCurrency: { name: "Robinhood", symbol: "RBH", decimals: 18 },
+  chainName: "BSC Chain",
+  nativeCurrency: { name: "BSC", symbol: "RBH", decimals: 18 },
   rpcUrls: ["https://rpc.robinhud.example"],
   blockExplorerUrls: ["https://explorer.robinhud.example"],
 };
@@ -107,7 +107,7 @@ export function useWallet() {
       if (addr) {
         window.localStorage.setItem(STORAGE_KEY, addr);
         setState({ address: addr, connecting: false });
-        // Best-effort: prompt user to add Robinhood Chain. Ignore failures.
+        // Best-effort: prompt user to add BSC Chain. Ignore failures.
         try {
           await eth.request({
             method: "wallet_addEthereumChain",

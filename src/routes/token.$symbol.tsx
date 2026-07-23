@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import logo from "@/assets/ponhub-logo.png.asset.json";
+import logo from "@/assets/MemeHub-logo.png.asset.json";
 import { ConnectWalletButton } from "@/components/ConnectWalletButton";
 import { useWallet } from "@/lib/wallet";
 
@@ -21,7 +21,7 @@ type Token = {
 };
 
 const TOKENS: Record<string, Token> = {
-  PON: { symbol: "PON", name: "PonHub", hue: 45, price: 0.00701, change: 12.4, mcap: "$221K", age: "3d", holders: 1420, bonding: 68, supply: "1,000,000,000", liquidity: "$42.8K", volume24: "$88.4K", desc: "The native launchpad token of PonHub. Fair-launched on Robinhood Chain, no team allocation, no presale." },
+  PON: { symbol: "PON", name: "MemeHub", hue: 45, price: 0.00701, change: 12.4, mcap: "$221K", age: "3d", holders: 1420, bonding: 68, supply: "1,000,000,000", liquidity: "$42.8K", volume24: "$88.4K", desc: "The native launchpad token of MemeHub. Fair-launched on BSC Chain, no team allocation, no presale." },
   TRT: { symbol: "TRT", name: "Trotter", hue: 260, price: 0.00042, change: -3.1, mcap: "$18K", age: "12h", holders: 214, bonding: 22, supply: "1,000,000,000", liquidity: "$4.1K", volume24: "$6.2K", desc: "Trotter — because every pon needs a good gait." },
   SDL: { symbol: "SDL", name: "Saddle", hue: 30, price: 0.02198, change: 42.6, mcap: "$412K", age: "6d", holders: 3110, bonding: 92, supply: "1,000,000,000", liquidity: "$91.2K", volume24: "$204K", desc: "Saddle up. Nearly bonded — one more push to graduate to the open market." },
   REN: { symbol: "REN", name: "Reinhold", hue: 300, price: 0.00088, change: 8.2, mcap: "$41K", age: "1d", holders: 512, bonding: 34, supply: "1,000,000,000", liquidity: "$9.4K", volume24: "$14.1K", desc: "Reinhold, first of his herd." },
@@ -32,7 +32,7 @@ const TOKENS: Record<string, Token> = {
   STL: { symbol: "STL", name: "Stallar", hue: 340, price: 0.01123, change: 33.8, mcap: "$276K", age: "7d", holders: 2210, bonding: 85, supply: "1,000,000,000", liquidity: "$61.4K", volume24: "$148K", desc: "Interstellar Stallar. Bonding curve almost complete." },
   GLP: { symbol: "GLP", name: "Gallop", hue: 55, price: 0.00061, change: -6.5, mcap: "$12K", age: "9h", holders: 141, bonding: 17, supply: "1,000,000,000", liquidity: "$2.9K", volume24: "$4.4K", desc: "Full Gallop or nothing." },
   OTT: { symbol: "OTT", name: "Trotcoin", hue: 120, price: 0.00889, change: 15.6, mcap: "$132K", age: "5d", holders: 1210, bonding: 63, supply: "1,000,000,000", liquidity: "$28.4K", volume24: "$58.1K", desc: "Trotcoin — the official currency of casual trotting." },
-  PNY: { symbol: "PNY", name: "Ponee", hue: 320, price: 0.00019, change: 2.2, mcap: "$4K", age: "1h", holders: 42, bonding: 6, supply: "1,000,000,000", liquidity: "$0.9K", volume24: "$1.4K", desc: "The littlest pon. Fresh launch on Robinhood." },
+  PNY: { symbol: "PNY", name: "Ponee", hue: 320, price: 0.00019, change: 2.2, mcap: "$4K", age: "1h", holders: 42, bonding: 6, supply: "1,000,000,000", liquidity: "$0.9K", volume24: "$1.4K", desc: "The littlest pon. Fresh launch on BSC." },
 };
 
 export const Route = createFileRoute("/token/$symbol")({
@@ -43,11 +43,11 @@ export const Route = createFileRoute("/token/$symbol")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Token not found — PonHub" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Token not found — MemeHub" }, { name: "robots", content: "noindex" }] };
     }
     const t = loaderData;
-    const title = `$${t.symbol} ${t.name} — PonHub`;
-    const desc = `Trade ${t.name} ($${t.symbol}) on PonHub. ${t.bonding}% bonded, ${t.holders} holders, ${t.mcap} market cap on Robinhood Chain.`;
+    const title = `$${t.symbol} ${t.name} — MemeHub`;
+    const desc = `Trade ${t.name} ($${t.symbol}) on MemeHub. ${t.bonding}% bonded, ${t.holders} holders, ${t.mcap} market cap on BSC Chain.`;
     return {
       meta: [
         { title },
@@ -66,7 +66,7 @@ export const Route = createFileRoute("/token/$symbol")({
     <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
       <div className="text-center">
         <h1 className="text-2xl font-semibold mb-2">Token not found</h1>
-        <p className="text-muted-foreground mb-4">This ticker isn't on PonHub yet.</p>
+        <p className="text-muted-foreground mb-4">This ticker isn't on MemeHub yet.</p>
         <Link to="/" className="rounded bg-primary text-primary-foreground px-4 py-2 text-sm font-medium">Back to launchpad</Link>
       </div>
     </div>
@@ -140,14 +140,14 @@ function TokenPage() {
       <div className="border-b border-border">
         <div className="max-w-[1400px] mx-auto px-6 py-3 flex items-center gap-3 text-xs">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo.url} alt="PonHub" className="h-6 w-auto" />
+            <img src={logo.url} alt="MemeHub" className="h-6 w-auto" />
           </Link>
           <span className="text-muted-foreground/50">/</span>
           <Link to="/" className="text-muted-foreground hover:text-foreground">launchpad</Link>
           <span className="text-muted-foreground/50">/</span>
           <span className="text-foreground font-mono">${t.symbol}</span>
           <div className="ml-auto flex items-center gap-2">
-            <span className="hidden sm:inline text-primary font-mono">◆ Robinhood Mainnet</span>
+            <span className="hidden sm:inline text-primary font-mono">◆ BSC Mainnet</span>
             <ConnectWalletButton />
           </div>
         </div>
@@ -168,7 +168,7 @@ function TokenPage() {
               <div className="flex-1 p-5">
                 <div className="flex items-start gap-3">
                   <div>
-                    <div className="text-xs text-muted-foreground font-mono">ponhub.{t.symbol.toLowerCase()}</div>
+                    <div className="text-xs text-muted-foreground font-mono">MemeHub.{t.symbol.toLowerCase()}</div>
                     <h1 className="text-2xl font-semibold tracking-tight">
                       {t.name} <span className="text-primary">${t.symbol}</span>
                     </h1>
@@ -218,7 +218,7 @@ function TokenPage() {
               <div>
                 <h2 className="text-sm font-semibold">Bonding curve</h2>
                 <p className="text-xs text-muted-foreground mt-0.5">
-                  Graduates to open market at 100%. Liquidity is auto-deployed to Robinhood DEX.
+                  Graduates to open market at 100%. Liquidity is auto-deployed to BSC DEX.
                 </p>
               </div>
               <div className="text-right">
@@ -341,7 +341,7 @@ function TokenPage() {
 
             <TradeButton side={side} symbol={t.symbol} />
             <p className="mt-2 text-center text-[10px] text-muted-foreground font-mono">
-              Trading on Robinhood Chain • powered by PonHub
+              Trading on BSC Chain • powered by MemeHub
             </p>
           </div>
 
@@ -351,7 +351,7 @@ function TokenPage() {
             <Row k="Supply" v={t.supply} />
             <Row k="Age" v={t.age} />
             <Row k="Deployer" v="0x21ac…9f01" />
-            <Row k="Chain" v="Robinhood" />
+            <Row k="Chain" v="BSC" />
           </div>
 
           <div className="rounded-xl border border-border bg-card p-4">

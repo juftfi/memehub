@@ -1,23 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import logo from "@/assets/ponhub-logo.png.asset.json";
+import logo from "@/assets/MemeHub-logo.png.asset.json";
 import { ConnectWalletButton } from "@/components/ConnectWalletButton";
 import { useWallet, shortAddress } from "@/lib/wallet";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PonHub — Launch tokens on Robinhood Chain" },
+      { title: "MemeHub — Launch tokens on BSC Chain" },
       {
         name: "description",
         content:
-          "PonHub is the community launchpad for fair-launch tokens on the Robinhood Chain. Discover, trade, and launch memes and micro-caps.",
+          "MemeHub is the community launchpad for fair-launch tokens on the BSC Chain. Discover, trade, and launch memes and micro-caps.",
       },
-      { property: "og:title", content: "PonHub — Launch tokens on Robinhood Chain" },
+      { property: "og:title", content: "MemeHub — Launch tokens on BSC Chain" },
       {
         property: "og:description",
         content:
-          "PonHub is the community launchpad for fair-launch tokens on the Robinhood Chain. Discover, trade, and launch memes and micro-caps.",
+          "MemeHub is the community launchpad for fair-launch tokens on the BSC Chain. Discover, trade, and launch memes and micro-caps.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -30,14 +30,14 @@ export const Route = createFileRoute("/")({
 
 type Trade = { side: "BUY" | "SELL"; token: string; amount: string; ticker: string };
 const trades: Trade[] = [
-  { side: "SELL", token: "PON", amount: "0.00686", ticker: "ponhub.pon" },
-  { side: "BUY", token: "PON", amount: "0.00701", ticker: "ponhub.pon" },
-  { side: "BUY", token: "MOO", amount: "0.0142", ticker: "ponhub.moo" },
-  { side: "SELL", token: "ZAP", amount: "0.0098", ticker: "ponhub.zap" },
-  { side: "BUY", token: "GLD", amount: "0.012", ticker: "ponhub.gld" },
-  { side: "SELL", token: "FRG", amount: "0.00186", ticker: "ponhub.frg" },
-  { side: "BUY", token: "OWL", amount: "0.0001", ticker: "ponhub.owl" },
-  { side: "SELL", token: "HAX", amount: "0.0043", ticker: "ponhub.hax" },
+  { side: "SELL", token: "PON", amount: "0.00686", ticker: "MemeHub.pon" },
+  { side: "BUY", token: "PON", amount: "0.00701", ticker: "MemeHub.pon" },
+  { side: "BUY", token: "MOO", amount: "0.0142", ticker: "MemeHub.moo" },
+  { side: "SELL", token: "ZAP", amount: "0.0098", ticker: "MemeHub.zap" },
+  { side: "BUY", token: "GLD", amount: "0.012", ticker: "MemeHub.gld" },
+  { side: "SELL", token: "FRG", amount: "0.00186", ticker: "MemeHub.frg" },
+  { side: "BUY", token: "OWL", amount: "0.0001", ticker: "MemeHub.owl" },
+  { side: "SELL", token: "HAX", amount: "0.0043", ticker: "MemeHub.hax" },
 ];
 
 type Token = {
@@ -55,7 +55,7 @@ type Token = {
 const tokens: Token[] = [
   {
     symbol: "PON",
-    name: "PonHub",
+    name: "MemeHub",
     hue: 45,
     price: "0.00701",
     change: 12.4,
@@ -221,10 +221,10 @@ function Index() {
         {/* Sidebar */}
         <aside className="hidden lg:flex w-64 shrink-0 flex-col border-r border-border min-h-[calc(100vh-40px)] p-5 gap-6">
           <div className="flex items-center gap-2">
-            <img src={logo.url} alt="PonHub" className="h-8 w-auto" />
+            <img src={logo.url} alt="MemeHub" className="h-8 w-auto" />
           </div>
           <div className="rounded-md border border-border bg-card px-3 py-2 text-xs font-mono text-muted-foreground">
-            <span className="text-primary">◆</span> Robinhood Chain
+            <span className="text-primary">◆</span> BSC Chain
             <div className="text-[10px] mt-0.5 text-muted-foreground/70">Block #4,281,004</div>
           </div>
           <nav className="flex flex-col gap-1 text-sm">
@@ -274,7 +274,7 @@ function Index() {
               All systems normal
             </div>
             <span className="text-muted-foreground/50">•</span>
-            <span className="text-primary font-mono">Robinhood Mainnet</span>
+            <span className="text-primary font-mono">BSC Mainnet</span>
             <div className="ml-auto flex items-center gap-2">
               <button className="rounded border border-border px-3 py-1.5 hover:bg-card">Docs</button>
               <ConnectWalletButton />
@@ -291,15 +291,15 @@ function Index() {
                 <div className="flex flex-col md:flex-row md:items-center gap-6">
                   <img
                     src={logo.url}
-                    alt="PonHub"
+                    alt="MemeHub"
                     className="h-16 md:h-20 w-auto drop-shadow-[0_0_25px_rgba(200,180,120,0.25)]"
                   />
                   <div>
                     <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">
-                      Fair-launch tokens on <span className="text-primary">Robinhood Chain</span>
+                      Fair-launch tokens on <span className="text-primary">BSC Chain</span>
                     </h1>
                     <p className="mt-1.5 text-sm text-muted-foreground max-w-xl">
-                      PonHub is the community launchpad for micro-caps and memes. No presales, no team allocations —
+                      MemeHub is the community launchpad for micro-caps and memes. No presales, no team allocations —
                       every token bonds through a transparent curve.
                     </p>
                   </div>
@@ -404,11 +404,11 @@ function Index() {
           </div>
 
           <footer className="border-t border-border px-6 py-6 text-xs text-muted-foreground flex flex-wrap gap-x-6 gap-y-2 items-center">
-            <img src={logo.url} alt="PonHub" className="h-5 w-auto" />
-            <span>Running on Robinhood Chain</span>
+            <img src={logo.url} alt="MemeHub" className="h-5 w-auto" />
+            <span>Running on BSC Chain</span>
             <div className="ml-auto flex items-center gap-3">
               <a
-                href="https://x.com/ponhubxyz"
+                href="https://x.com/MemeHubxyz"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-md border border-border px-3 py-1.5 text-muted-foreground transition-colors hover:text-foreground hover:border-primary/50"
@@ -416,14 +416,14 @@ function Index() {
                 Twitter
               </a>
               <a
-                href="https://t.me/ponhubxyz"
+                href="https://t.me/MemeHubxyz"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-md border border-border px-3 py-1.5 text-muted-foreground transition-colors hover:text-foreground hover:border-primary/50"
               >
                 Telegram
               </a>
-              <span className="font-mono">Not affiliated with Robinhood Markets, Inc.</span>
+              <span className="font-mono">Not affiliated with BSC Markets, Inc.</span>
             </div>
           </footer>
         </main>
@@ -470,7 +470,7 @@ function WalletCard() {
       <div className="h-8 w-8 rounded-full bg-gradient-to-br from-primary to-[color:var(--buy)]" />
       <div className="text-xs min-w-0">
         <div className="font-mono truncate">{shortAddress(address)}</div>
-        <div className="text-muted-foreground text-[10px]">Robinhood Chain</div>
+        <div className="text-muted-foreground text-[10px]">BSC Chain</div>
       </div>
       <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[color:var(--buy)] shrink-0" />
     </div>
