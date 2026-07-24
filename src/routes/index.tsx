@@ -408,7 +408,7 @@ function Index() {
             <span>Running on BSC Chain</span>
             <div className="ml-auto flex items-center gap-3">
               <a
-                href="https://x.com/MemeHubxyz"
+                href="https://x.com/MemeHub_art"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-md border border-border px-3 py-1.5 text-muted-foreground transition-colors hover:text-foreground hover:border-primary/50"
@@ -416,7 +416,7 @@ function Index() {
                 Twitter
               </a>
               <a
-                href="https://t.me/MemeHubxyz"
+                href="https://t.me/MemeHub_art"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-md border border-border px-3 py-1.5 text-muted-foreground transition-colors hover:text-foreground hover:border-primary/50"
