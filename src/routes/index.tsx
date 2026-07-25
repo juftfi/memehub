@@ -305,7 +305,7 @@ function Index() {
                   </div>
                   <div className="md:ml-auto flex flex-col sm:flex-row gap-2">
                     <a
-                      href="https://four.meme/en/token/0xbcab8a82e635c8bf3c703bd29ac5ff66f3dcffff"
+                      href="https://four.meme/"
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-md bg-[color:var(--buy)] text-primary-foreground px-5 py-2.5 font-medium whitespace-nowrap text-center"
